@@ -13,6 +13,7 @@ const passUserToView = require('./middleware/pass-user-to-view.js')
 
 const authController = require('./controllers/auth.js')
 const blogsController = require('./controllers/blogs.js')
+const userController = require('./controllers/users.js')
 
 const port = process.env.PORT ? process.env.PORT :'3000'
 
@@ -31,6 +32,8 @@ const app = express()
 app.use(express.urlencoded({extended: false}))
 app.use(methodOverride("_method"))
 app.use(morgan('dev'))
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -52,5 +55,6 @@ app.get('/', (req, res) => {
 app.use('/auth', authController)
 app.use(isSignedIn)
 app.use('/users/:userID/blogs', blogsController)
+app.use('/users', userController)
 
 app.listen(3000);

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>
+        <%= user.username %>'s Posts
+    </h1>
+    <% if(user.blogs.length===0) { %>
+        <h3>This User hasn't blogged</h3>
+    <% } else {%>
+        <ul>
+            <% user.blogs.forEach((blog) =>{ %>
+                <div class="post">
+                <li>
+                    Title: <%=blog.title%>
+                    Take: <%=blog.comment%>
+                </li>
+                </div>
+                   
+           <% }) %>
+        </ul>
+   <% } %>
+</body>
+</html>

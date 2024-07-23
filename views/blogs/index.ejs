@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=user.username%> Blogs</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Your Blogs</h1>
-    <a href="/users/<%= user._id%>/blogs/new">Create a Post</a>
-    <h2>Here be all your Blogs</h2>
     <ul>
         <% blogs.forEach((blog) => { %>
             <li>
@@ -19,5 +18,6 @@
             </li>
         <% }) %>
     </ul>
+    <a href="/users/<%= user._id%>/blogs/new">Create a New Post</a>
 </body>
 </html>

@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap');
+body {
+    font-family: 'Vollkorn', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background-color:#5E8C61;
+    overflow: hidden;
+  }
+
+  .index-body {
+    background-image: url('https://img.freepik.com/free-photo/black-white-view-adventure-time-with-off-road-vehicle-rough-terrain_23-2151476260.jpg?t=st=1721762050~exp=1721765650~hmac=e35a18e75de165ded144b46b0c6ec602d89bfe6daee9ca14e4efe65c73c7cf00&w=1060');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100vw;
+    color: white;
+  }
+
+  

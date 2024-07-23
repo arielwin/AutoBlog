@@ -1,9 +1,18 @@
+<link rel="stylesheet" href="/stylesheets/partials.css" />
+
 <nav>
     <% if(user) { %>
-        <a href="/users/<%=user._id%>/blogs">Your Blogs</a>
-        <a href="/auth/sign-out">Sign Out</a>
+        <div class="navbar">
+            <h3 id="nav-header">Emission Report</h3>
+            <div class="nav-links">
+                <a class="authlink" href="/users/<%=user._id%>/blogs">Your Blogs</a>
+                <a class="authlink" href="/users"> View User Blogs</a>
+                <a class="authlink" href="/auth/sign-out">Sign Out</a>
+        </div>
     <% } else { %>
+    <div class = "navbar">
+        <h3 id ="nav-header">Emission Report</h3> 
         <a href="/auth/sign-in">Sign In</a>
-        <a  href="/auth/sign-up">Sign Up</a>
+        <a href="/auth/sign-up">Sign Up</a>
     <% } %>
 </nav>

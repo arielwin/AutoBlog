@@ -42,5 +42,42 @@ router.get('/:blogId', async (req, res) => {
     }
 })
 
+router.delete('/:blogId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id)
+        currentUser.blogs.id(req.params.blogId).deleteOne()
+        await currentUser.save()
+        res.redirect(`/users/${currentUser._id}/blogs/`)
+    } catch (error) {
+        console.log(error)
+        res.redirect('/')
+    }
+})
 
+router.get('/:blogId/edit', async (req, res) => {
+    try{
+        const currentUser = await User.findById(req.session.user._id)
+        const blog = currentUser.blogs.id(req.params.blogId)
+        res.render('blogs/edit.ejs', {
+            blog: blog
+        })
+    } catch (error) {
+        console.log(error)
+        res.redirect('/')
+    }
+})
+
+router.put('/:blogId', async (req, res) => {
+    try{
+        const currentUser = await User.findById(req.session.user._id)
+        const blog = currentUser.blogs.id(req.params.blogId)
+
+        blog.set(req.body)
+        await currentUser.save()
+        res.redirect(`/users/${currentUser._id}/blogs/${req.params.blogId}`)
+    } catch (error) {
+        console.log(error)
+        res.redirect('/')
+    }
+})
 module.exports = router
