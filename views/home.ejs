@@ -7,19 +7,18 @@
     <title>Emission Report</title>
 </head>
 <body class = index-body>
-    <img src="https://img.freepik.com/free-photo/black-white-view-adventure-time-with-off-road-vehicle-rough-terrain_23-2151476260.jpg?t=st=1721762050~exp=1721765650~hmac=e35a18e75de165ded144b46b0c6ec602d89bfe6daee9ca14e4efe65c73c7cf00&w=1060" alt="Black and white view of adventure time with off-road vehicle on rough terrain" style="display:none;">
     <%- include('./partials/_navbar.ejs') %>
     <div class="index-container">
         <div class="text-container">
             <h1 class="main-header">Emission Report</h1>
+            <p class="subheader">A blog about cars!</p>
             <% if (user) { %>
-                <h1>Welcome back, <%= user.username %>!</h1>
+                <h1 >Welcome back, <%= user.username %>!</h1>
                 <p>
                     <a href="/auth/sign-out">Sign Out</a>
                 </p>
             <% } else { %>
-                <h1>Hi there! Please sign in or sign up to post on the blog.</h1>
-                <h1><a href="/auth/sign-up">Sign Up</a> or <a href="/auth/sign-in">Sign in</a> </h1>
+                <h1 class="welcome">Hi there! Please<a class="authlink" href="/auth/sign-in">Sign in</a>or<a class="authlink" href="/auth/sign-up">Sign Up</a>to post on the blog.</h1>
             <% } %>
         </div>
     </div>

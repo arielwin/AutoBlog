@@ -19,4 +19,34 @@ body {
     color: white;
   }
 
+  .main-header {
+    font-weight: bold;
+    color: #5E8C61;
+    font-size: 5.6em;
+    margin: 15px
+  }
+  .subheader {
+    margin: 0 20px 0 20px;
+    font-size: 1.4em;
+  }
+  .welcome{
+    color: #5E8C61;
+    margin: 0px 20px 0 20px;
+    background-color: antiquewhite;
+  }
+  .index-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
   
+  .signin-container,
+  .signup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
