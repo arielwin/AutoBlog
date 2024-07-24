@@ -6,18 +6,20 @@
     <link rel="stylesheet" href="/stylesheets/style.css"/>
     <title>Your Blog</title>
 </head>
-<body>
-    <%- include('../partials/_navbar.ejs') %>
-    <h1 class="post-title"><%= blog.title %></h1>
-    <p class="post"><%= blog.comment %></p>
+    <body class="your-blog-body">
+        <%- include('../partials/_navbar.ejs') %>
+        <div class="your-blog-container">
 
-    <form
-        action="/users/<%=user._id%>/blogs/<%=blog._id%>?_method=DELETE"
-        method="POST"
-        >
-        <button type="submit">Delete Post</button>
-    </form>
-
-    <a href="/users/<%=user._id%>/blogs/<%=blog._id%>/edit">Edit</a>
-</body>
-</html>
+            <h1 class="post-title"><%= blog.title %></h1>
+            <p class="post-content"><%= blog.comment %></p>
+    
+            <form
+                action="/users/<%=user._id%>/blogs/<%=blog._id%>?_method=DELETE"
+                method="POST"
+                class="delete-blog-form">
+                <button type="submit" class="delete-blog-button">Delete Post</button>
+            </form>
+    
+            <a href="/users/<%=user._id%>/blogs/<%=blog._id%>/edit" class="edit-blog-link">Edit</a>
+    </body>
+</div>

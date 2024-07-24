@@ -6,17 +6,21 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Edit Blog</title>
 </head>
-<body>
+<body class="edit-blog-body">
     <%- include('../partials/_navbar.ejs') %>
-    <h1> Edit your blog post</h1>
-    <form action="/users/<%= user._id%>/blogs/<%=blog._id %>?_method=PUT" method="POST">
-        <label for="title">Title:</label>
-        <input type="text" name="title" id="title" value="<%=blog.title%>"/>
+    <div class="edit-blog-container">
+        <h1 class="edit-blog-header"> Edit your blog post</h1>
+        <form class="edit-blog-form" action="/users/<%= user._id%>/blogs/<%=blog._id %>?_method=PUT" method="POST">
+            <label for="title" class="edit-blog-label">Title:</label>
+            <input type="text" name="title" id="title" class="edit-blog-input" value="<%=blog.title%>"/>
+            </br>
+            <label for="comment" class="edit-blog-label">Enter your thoughts here: </label>
+            </br>
+            <textarea name="comment" id="comment" class="edit-blog-textarea" rows="5" cols="150"><%=blog.comment%></textarea>
+            </br>
+            <button type="submit" class="edit-blog-button">Post</button>
+        </form>
+    </div>
 
-        <label for="comment">Enter your thoughts here: </label>
-        <textarea name="comment" id="comment" ><%=blog.comment%></textarea>
-
-        <button type="submit">Post</button>
-    </form>
 </body>
 </html>

@@ -13,12 +13,14 @@
             <h1 class="main-header">Emission Report</h1>
             <p class="subheader">A blog about cars!</p>
             <% if (user) { %>
-                <h1 >Welcome back, <%= user.username %>!</h1>
-                <p>
-                    <a href="/auth/sign-out">Sign Out</a>
+                <h1 id="welcome-back" class="welcome-back">Welcome back, <%= user.username %>!</h1>
+                <p class="auth-options">
+                    <a class="authlink" href="/users/<%=user._id%>/blogs">Your Blogs</a>
+                    <a class="authlink" href="/Users">User Blogs</a>
+                    <a class="authlink" href="/auth/sign-out">Sign Out</a>
                 </p>
             <% } else { %>
-                <h1 class="welcome">Hi there! Please<a class="authlink" href="/auth/sign-in">Sign in</a>or<a class="authlink" href="/auth/sign-up">Sign Up</a>to post on the blog.</h1>
+                <h1 class="welcome" class="welcome"> Hi there! Please<a class="authlink" href="/auth/sign-in">Sign in</a>or<a class="authlink" href="/auth/sign-up">Sign Up</a>to post on the blog.</h1>
             <% } %>
         </div>
     </div>

@@ -6,25 +6,26 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Document</title>
 </head>
-<body>
+<body class="user-posts-body">
     <%- include('../partials/_navbar.ejs') %>
-    <h1>
-        <%= user.username %>'s Posts
-    </h1>
-    <% if(user.blogs.length===0) { %>
-        <h3>This User hasn't blogged</h3>
-    <% } else {%>
-        <ul>
-            <% user.blogs.forEach((blog) =>{ %>
-                <div class="post">
-                <li>
-                    Title: <%=blog.title%>
-                    Take: <%=blog.comment%>
-                </li>
-                </div>
-                   
-           <% }) %>
-        </ul>
-   <% } %>
+    <div class="user-posts-container">
+        <h1 class="user-posts-header">
+            <%= user.username %>'s Posts
+        </h1>
+        <% if(user.blogs.length===0) { %>
+            <h3 class="no-post-message">This User hasn't blogged</h3>
+        <% } else {%>
+            <ul class="user-posts-list">
+                <% user.blogs.forEach((blog) =>{ %>
+                    <li class="user-post-item">
+                        <div class="post">
+                            <h3 class="post-title">Title: <%=blog.title%></h3>
+                            <p class="post-comment">Take: <%=blog.comment%></p>
+                        </div>
+                    </li>
+               <% }) %>
+            </ul>
+       <% } %>
+    </div>
 </body>
 </html>

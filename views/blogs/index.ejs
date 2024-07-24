@@ -6,18 +6,20 @@
     <title><%=user.username%> Blogs</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
-<body>
+<body class="blogs-body">
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Your Blogs</h1>
-    <ul>
+    <div class="blogs-container">
+        <h1 class="blogs-header">Your Blogs</h1>
+        <ul class="blogs-list">
         <% blogs.forEach((blog) => { %>
-            <li>
-                <a href="/users/<%=user._id%>/blogs/<%=blog._id %>">
+            <li class="blog-item">
+                <a class="blog-link" href="/users/<%=user._id%>/blogs/<%=blog._id %>">
                 <%= blog.title %>
                 </a>
             </li>
         <% }) %>
-    </ul>
-    <a href="/users/<%= user._id%>/blogs/new">Create a New Post</a>
+        </ul>
+        <a class="create-blog-link" href="/users/<%= user._id%>/blogs/new">Create a New Post</a>
+    </div>
 </body>
 </html>

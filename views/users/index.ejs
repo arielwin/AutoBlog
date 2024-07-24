@@ -6,15 +6,17 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Document</title>
 </head>
-<body>
+<body class="user-blogs-body">
     <%- include('../partials/_navbar.ejs') %>
-    <h1>User Blogs</h1>
-    <ul>
-        <% users.forEach((user) => { %>
-            <li>
-                 <a href="/users/<%= user._id %>">User: <%= user.username %></a>
-             </li>
-            <% }) %>
-    </ul>
+    <div class="user-blogs-container">
+        <h1 class="user-blogs-header">User Blogs</h1>
+        <ul class="user-blogs-list">
+            <% users.forEach((user) => { %>
+                <li class="user-blog-items">
+                     <a href="/users/<%= user._id %>" class="user-blog-link">User: <%= user.username %></a>
+                 </li>
+                <% }) %>
+        </ul>
+    </div>
 </body>
 </html>

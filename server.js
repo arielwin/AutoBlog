@@ -46,7 +46,8 @@ app.use(passUserToView)
 //landing page
 app.get('/', (req, res) => {
     if (req.session.user){
-        res.redirect(`/users/${req.session.user._id}/blogs`)
+        res.render('home.ejs')
+        // res.redirect(`/users/${req.session.user._id}/blogs`)
     } else{ 
         res.render('home.ejs')
     }
