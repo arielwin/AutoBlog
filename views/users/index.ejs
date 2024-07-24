@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title>Document</title>
+    <title>Emission Report Users</title>
 </head>
 <body class="user-blogs-body">
     <%- include('../partials/_navbar.ejs') %>
@@ -12,10 +12,17 @@
         <h1 class="user-blogs-header">User Blogs</h1>
         <ul class="user-blogs-list">
             <% users.forEach((user) => { %>
-                <li class="user-blog-items">
-                     <a href="/users/<%= user._id %>" class="user-blog-link">User: <%= user.username %></a>
-                 </li>
+                <ul class="user-posts-list">
+                    <% user.blogs.forEach((blog) =>{ %>
+                        <li class="user-post-item">
+                            <div class="post">
+                                <h3 class="post-title">Title: <%=blog.title%></h3>
+                                <p class="post-comment">My take: <%=blog.comment%></p>
+                            </div>
+                        </li>
                 <% }) %>
+            </ul>
+       <% }) %>
         </ul>
     </div>
 </body>

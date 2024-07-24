@@ -6,20 +6,24 @@
     <title><%=user.username%> Blogs</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
-<body class="blogs-body">
-    <%- include('../partials/_navbar.ejs') %>
-    <div class="blogs-container">
-        <h1 class="blogs-header">Your Blogs</h1>
-        <ul class="blogs-list">
-        <% blogs.forEach((blog) => { %>
-            <li class="blog-item">
-                <a class="blog-link" href="/users/<%=user._id%>/blogs/<%=blog._id %>">
-                <%= blog.title %>
-                </a>
-            </li>
-        <% }) %>
-        </ul>
-        <a class="create-blog-link" href="/users/<%= user._id%>/blogs/new">Create a New Post</a>
-    </div>
-</body>
+    <body class="blogs-body">
+        <%- include('../partials/_navbar.ejs') %>
+        <div class="blogs-container">
+            <h1 class="blogs-header">Your Blogs</h1>
+            <% if (!user.blog) { %>
+                <h3 class="blogs-header">No Posts Yet</h3>
+            <% } else { %>
+                <ul class="blogs-list">
+                    <% blogs.forEach((blog) => { %>
+                        <li class="blog-item">
+                            <a class="blog-link" href="/users/<%=user._id%>/blogs/<%=blog._id %>">
+                            <%= blog.title %>
+                            </a>
+                        </li>
+                    <% }) %>
+                </ul>
+            <% } %>
+            <a class="create-blog-link" href="/users/<%= user._id%>/blogs/new">Create a New Post</a>
+        </div>
+    </body>
 </html>

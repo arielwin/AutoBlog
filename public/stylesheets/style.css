@@ -529,3 +529,85 @@ body {
   color: #333;
   margin: 0;
 }
+
+body {
+  font-family: 'Vollkorn', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background-color: #5E8C61;
+  overflow: hidden;
+}
+
+.signup-body, .signin-body {
+  background-image: url('https://img.freepik.com/free-photo/black-white-view-adventure-time-with-off-road-vehicle-rough-terrain_23-2151476260.jpg?t=st=1721762050~exp=1721765650~hmac=e35a18e75de165ded144b46b0c6ec602d89bfe6daee9ca14e4efe65c73c7cf00&w=1060');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100vw;
+  color: white;
+}
+
+.signup-container, .signin-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.signup-header, .signin-header {
+  font-weight: bold;
+  color: #5E8C61;
+  font-size: 3em;
+  margin: 15px 0;
+}
+
+.signup-form, .signin-form {
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-button {
+  display: inline-block;
+  font-size: 1.2em;
+  color: #ffffff;
+  background-color: #5E8C61;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #3e5c41;
+}

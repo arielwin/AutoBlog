@@ -6,21 +6,21 @@
   <link rel="stylesheet" href="/stylesheets/style.css" />
   <title>Sign In</title>
 </head>
-<body>
+<body class="signin-body">
   <%- include('../partials/_navbar.ejs') %>
   <div class="signin-container">
-    <h1>Sign in</h1>
-    <form action="/auth/sign-in" method="POST">
-      <div>
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" />
+    <h1 class="signin-header">Sign in</h1>
+    <form action="/auth/sign-in" method="POST" class="signin-form">
+      <div class="forem-group">
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" name="username" id="username" class="form-input"/>
       </div>
-      <div>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" />
+      <div class="form-group">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" name="password" id="password" class="form-input"/>
       </div>
-      <div>
-         <button type="submit">Sign in</button>
+      <div class="form-group">
+         <button type="submit" class="form-button">Sign in</button>
       </div>
     </form>
   </div>

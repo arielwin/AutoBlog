@@ -6,27 +6,26 @@
   <link rel="stylesheet" href="/stylesheets/style.css" />
   <title>Sign Up</title>
 </head>
-<body>
+<body class="signup-body">
   <%- include('../partials/_navbar.ejs') %>
   <div class="signup-container">
-    <h1>Create a new account!</h1>
-    <form action="/auth/sign-up" method="POST">
-      <div>
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" />
+    <h1 class="signup-header">Create a new account!</h1>
+    <form action="/auth/sign-up" method="POST" class="signup-form">
+      <div class="form-group">
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" name="username" id="username" class="form-input" />
       </div>
-      <div>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" />
+      <div class="form-group">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" name="password" id="password" class="form-input"/>
       </div>
-      <div>
-        <label for="confirmPassword">Confirm Password:</label>
-        <input type="password" name="confirmPassword" id="confirmPassword" />
+      <div class="form-group">
+        <label for="confirmPassword" class="form-label">Confirm Password:</label>
+        <input type="password" name="confirmPassword" id="confirmPassword" class="form-input"/>
       </div>
-      <div>
-        <button type="submit">Sign up</button>
+      <div class="form-group">
+        <button type="submit" class="form-button">Sign up</button>
       </div>
-
     </form>
   </div>
 </body>
