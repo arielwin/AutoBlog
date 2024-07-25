@@ -58,4 +58,4 @@ app.use(isSignedIn)
 app.use('/users/:userID/blogs', blogsController)
 app.use('/users', userController)
 
-app.listen(3000);
+app.listen(port);

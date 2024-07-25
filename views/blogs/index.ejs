@@ -10,8 +10,9 @@
         <%- include('../partials/_navbar.ejs') %>
         <div class="blogs-container">
             <h1 class="blogs-header">Your Blogs</h1>
-            <% if (!user.blog) { %>
+            <% if (!blogs) { %>
                 <h3 class="blogs-header">No Posts Yet</h3>
+                <h3> <%=user.blogs.length%></h3>
             <% } else { %>
                 <ul class="blogs-list">
                     <% blogs.forEach((blog) => { %>
