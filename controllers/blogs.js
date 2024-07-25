@@ -9,7 +9,6 @@ router.get('/', async (req, res) => {
         res.render('blogs/index.ejs', { blogs : currentUser.blogs })
         
     } catch (error) {
-        console.log(error)
         res.redirect('/')
     }
 })
@@ -25,7 +24,6 @@ router.post('/', async (req,res) => {
         await currentUser.save()
         res.redirect(`/users/${currentUser._id}/blogs`)
     } catch (error) {
-        consosle.log(error)
         res.redirect('/')
     }
 })
@@ -38,7 +36,6 @@ router.get('/:blogId', async (req, res) => {
             blog: blog
         })
     } catch (error) {
-        console.log(error)
         res.redirect('/')
     }
 })
@@ -50,7 +47,6 @@ router.delete('/:blogId', async (req, res) => {
         await currentUser.save()
         res.redirect(`/users/${currentUser._id}/blogs/`)
     } catch (error) {
-        console.log(error)
         res.redirect('/')
     }
 })
@@ -63,7 +59,6 @@ router.get('/:blogId/edit', async (req, res) => {
             blog: blog
         })
     } catch (error) {
-        console.log(error)
         res.redirect('/')
     }
 })
@@ -72,12 +67,10 @@ router.put('/:blogId', async (req, res) => {
     try{
         const currentUser = await User.findById(req.session.user._id)
         const blog = currentUser.blogs.id(req.params.blogId)
-
         blog.set(req.body)
         await currentUser.save()
         res.redirect(`/users/${currentUser._id}/blogs/${req.params.blogId}`)
     } catch (error) {
-        console.log(error)
         res.redirect('/')
     }
 })
