@@ -17,8 +17,6 @@ Follow this link to participate: [Emission Report](https://emission-report-480e2
     - To see your own posts, head to the "Your Blogs" link in the top right
     - To see what others are saying, head to the "View User Blogs" link in the top right
     - To sign out, click the "Sign out" link
-   
-## Attributes
 
 ## Technologies
   - MongoDB
