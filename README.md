@@ -2,9 +2,9 @@
 
 
 # Emission Report
-###brought to you by Ari Winters
+### brought to you by Ari Winters
 
-##Getting Started
+## Getting Started
 Follow this link to participate: [Emission Report](https://emission-report-480e2f72ce69.herokuapp.com/)
 
   - First time visitors must make an account to participate
